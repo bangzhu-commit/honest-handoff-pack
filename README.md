@@ -82,6 +82,20 @@ Default behavior:
 - If the task is small, single-file, and easy to restate in one message, do not package it.
 - Package at "checkpoint moments," not after every message.
 
+## Quota And Context Warnings
+
+Exact quota warnings are only possible when the current AI tool exposes reliable usage data, such as remaining messages, token budget, or a usage API. If that data is available, the agent can use simple thresholds:
+
+- Around 80% used: suggest creating a handoff pack at the next checkpoint.
+- Around 90% used: strongly recommend creating a handoff pack before continuing.
+
+If the tool does not expose reliable quota data, do not pretend to know the exact percentage. Use a handoff risk level instead:
+
+- Medium risk: long conversation, several files, multiple decisions, or a completed phase.
+- High risk: context warnings, rate-limit or quota errors, repeated retries, model instability, or the user says the current account/tool may fail soon.
+
+In medium risk, ask lightly. In high risk, interrupt with a clear handoff recommendation.
+
 ## Use Directly
 
 Discovery pass:

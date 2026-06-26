@@ -114,6 +114,25 @@ Offer a short confirmation first when:
 Do not package when the task is small, single-file, and can be restated in one
 message. Package at checkpoint moments, not after every message.
 
+### Quota And Context Warnings
+
+Only use exact percentage thresholds when the current tool exposes reliable usage
+data, such as remaining messages, token budget, context budget, or a usage API.
+
+- At about 80% used: suggest creating a handoff pack at the next checkpoint.
+- At about 90% used: strongly recommend creating a handoff pack before continuing.
+
+If reliable usage data is not available, do not claim an exact percentage. Use
+handoff risk instead:
+
+- Medium risk: long conversation, many files, several decisions, or a phase just
+  finished.
+- High risk: context warning, quota/rate-limit error, repeated retries, unstable
+  model behavior, or the user says the account/tool may fail soon.
+
+At medium risk, ask a short confirmation. At high risk, interrupt with a clear
+recommendation to build the pack.
+
 ## Pack Contents
 
 Every built pack must contain:

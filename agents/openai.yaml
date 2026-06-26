@@ -1,0 +1,4 @@
+interface:
+  display_name: "Honest Handoff Pack"
+  short_description: "把内容任务的文件、上下文、事实边界和下一步动作打包给另一个 AI 继续"
+  default_prompt: "Use $honest-handoff-pack to identify the current content task boundary, show candidate task clusters for confirmation, then build an honest handoff folder and zip with HANDOFF.md, RESUME_PROMPT.md, manifest.json, task boundary notes, included files, excluded files, and clear fact/source/editorial boundaries."

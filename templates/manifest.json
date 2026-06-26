@@ -1,0 +1,15 @@
+{
+  "task_title": "{{TASK_TITLE}}",
+  "generated_at": "{{GENERATED_AT}}",
+  "workspace": "{{WORKSPACE}}",
+  "target_ai": "{{TARGET_AI}}",
+  "files": [],
+  "conversation": {
+    "enabled": false,
+    "included_turns": 0,
+    "files": [],
+    "sources": [],
+    "warnings": []
+  },
+  "excluded_files": []
+}

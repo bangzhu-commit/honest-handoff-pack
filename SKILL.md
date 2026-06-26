@@ -93,6 +93,27 @@ Before building without a clear task name or core file, present a concise candid
 - Unrelated industry deep research
 ```
 
+## Trigger Timing
+
+Do not build a handoff pack after every normal task turn. Trigger at risk points
+and checkpoint moments.
+
+Build directly when the user explicitly says:
+
+- 打包交接, 换 AI 继续, 额度快满了, 上下文快满了
+- 生成 handoff 包, 把上下文打包, 把同一任务的对话带过去
+- hand this to Claude, ChatGPT, Gemini, Cursor, a teammate, or another AI
+
+Offer a short confirmation first when:
+
+- The task has multiple source files, drafts, decisions, and pending confirmations.
+- A phase has just finished: research, outline, first draft, fact check, or final revision.
+- Continuing in the current session risks losing important context.
+- The user says the task is stuck, unstable, or likely to move to another account/tool.
+
+Do not package when the task is small, single-file, and can be restated in one
+message. Package at checkpoint moments, not after every message.
+
 ## Pack Contents
 
 Every built pack must contain:

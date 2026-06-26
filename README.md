@@ -58,6 +58,30 @@ Generate a handoff pack so I can continue this task in another AI tool.
 
 The agent should first show candidate task clusters when the task boundary is unclear. It should only build the final pack after a clear task name, core file, or user confirmation.
 
+## When To Trigger
+
+Do not package every task at every turn. Trigger handoff at clear risk points or phase boundaries.
+
+Manual triggers:
+
+- The user says they want to switch AI tools, continue elsewhere, or hand the task to another person.
+- The user mentions token limits, subscription limits, account limits, context overflow, model instability, or a task getting stuck halfway.
+- The user asks to include the same-task conversation, current context, or files for another AI.
+
+Proactive soft triggers:
+
+- The task already has multiple source files, drafts, decisions, and pending confirmations.
+- The work just reached a stable checkpoint: research finished, outline finished, first draft finished, fact check finished, or before a major rewrite.
+- The next step depends on preserving source boundaries, user preferences, or "what has already been tried."
+- The agent notices that continuing in the current session may lose useful context.
+
+Default behavior:
+
+- If the user explicitly asks for a handoff pack, build it once the task boundary is clear.
+- If the agent only detects risk, ask a short confirmation first.
+- If the task is small, single-file, and easy to restate in one message, do not package it.
+- Package at "checkpoint moments," not after every message.
+
 ## Use Directly
 
 Discovery pass:

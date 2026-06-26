@@ -116,11 +116,16 @@ message. Package at checkpoint moments, not after every message.
 
 ### Quota And Context Warnings
 
-Only use exact percentage thresholds when the current tool exposes reliable usage
-data, such as remaining messages, token budget, context budget, or a usage API.
+Only use exact percentage thresholds when the current tool exposes reliable
+usage data, such as remaining messages, token budget, context budget, usage
+dashboard values, CLI status output, or a usage API.
 
 - At about 80% used: suggest creating a handoff pack at the next checkpoint.
 - At about 90% used: strongly recommend creating a handoff pack before continuing.
+
+For provider-specific detection rules, read
+`references/quota-and-context-detection.md` when the user asks what can be
+detected, or when deciding whether to proactively warn about quota/context risk.
 
 If reliable usage data is not available, do not claim an exact percentage. Use
 handoff risk instead:

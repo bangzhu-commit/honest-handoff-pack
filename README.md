@@ -89,6 +89,18 @@ Exact quota warnings are only possible when the current AI tool exposes reliable
 - Around 80% used: suggest creating a handoff pack at the next checkpoint.
 - Around 90% used: strongly recommend creating a handoff pack before continuing.
 
+Different tools expose different signals:
+
+| Tool type | Can it support exact warnings? | Practical rule |
+| --- | --- | --- |
+| Claude Code, Cursor, GitHub Copilot, Devin Desktop | Usually yes, if the status command, usage dashboard, usage meter, or plan page is readable | Use the real meter, then warn around 75-80% and 90%. |
+| Codex on a ChatGPT plan | Sometimes | Use the Codex usage page or limit banner when visible. Do not guess from conversation length. |
+| Claude web/desktop paid plans | Often, with UI access | Use Settings > Usage progress bars when available. Otherwise treat warning messages as risk signals. |
+| Gemini Apps and other opaque consumer apps | Usually no exact account percentage | Use context-window pressure, visible warnings, rate-limit errors, and task complexity as risk signals. |
+| API-funded tools, such as OpenAI API or DeepSeek API | Yes, if the API key can read usage, costs, balance, or credits | Treat API usage separately from consumer subscription limits. |
+
+Detailed provider notes live in [`references/quota-and-context-detection.md`](references/quota-and-context-detection.md).
+
 If the tool does not expose reliable quota data, do not pretend to know the exact percentage. Use a handoff risk level instead:
 
 - Medium risk: long conversation, several files, multiple decisions, or a completed phase.
